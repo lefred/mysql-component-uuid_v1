@@ -1,4 +1,4 @@
-# mysql-component-uuid-v1
+# mysql-component-uuid_v1
 
 Extending MySQL using the Component Infrastructure - Adding a functions to retrieve
 timestamp information related to UUID v1 (default in MySQL 8).
