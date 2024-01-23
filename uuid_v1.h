@@ -1,4 +1,4 @@
-/* Copyright (c) 2017, 2023, Oracle and/or its affiliates. All rights reserved.
+/* Copyright (c) 2017, 2024, Oracle and/or its affiliates. All rights reserved.
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License, version 2.0,
   as published by the Free Software Foundation.
@@ -39,10 +39,11 @@
 #include <iostream>
 #include <iomanip>
 
-#include <boost/date_time.hpp>
+#include <boost/locale/date_time.hpp>
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
 #include <boost/uuid/uuid_io.hpp>
+#include <boost/algorithm/string.hpp>
 
 // Return human readable format like
 // 2023-08-11 08:08:03.373

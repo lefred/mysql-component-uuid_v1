@@ -67,3 +67,18 @@ ERROR: 3200 (HY000): uuid_v7_to_timestamp UDF failed; this function requires onl
 ERROR: 3200 (HY000): uuid_v7_to_timestamp UDF failed; this function requires 1 parameteter
 ```
 
+# Compilation notes
+
+Since MySQL 8.3.0, boost is included in the source code (extra directory), but it's not a full
+version, some modules are missing to compile this component.
+
+You need to copy them first:
+
+```
+cp -r boost_1_77_0/boost/uuid/ mysql-%{version}/extra/boost/boost_1_77_0/boost/
+cp -r boost_1_77_0/boost/tti/ mysql-%{version}/extra/boost/boost_1_77_0/boost/
+cp -r boost_1_77_0/boost/io/ mysql-%{version}/extra/boost/boost_1_77_0/boost/
+cp -r boost_1_77_0/boost/random/ mysql-%{version}/extra/boost/boost_1_77_0/boost/
+cp boost_1_77_0/boost/random.hpp mysql-%{version}/extra/boost/boost_1_77_0/boost/
+```
+
