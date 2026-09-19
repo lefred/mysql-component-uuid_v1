@@ -1,0 +1,28 @@
+name: Build and package UUID v1 component
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: lefred/mysql-component-ci/.github/workflows/build-component.yml@main
+    with:
+      component_name: uuid_v1
+      component_directory: uuid_v1
+      build_target: component_uuid_v1
+      component_library: component_uuid_v1.so
+
+      sdk_image: quay.io/lefred14/mysql-component-build
+      mysql_versions: |
+          9.7.2
+          26.7.0
